@@ -1,4 +1,4 @@
-import HeroCard from './HeroCard.js';
+import HeroCardUserTeam from './HeroCardUserTeam.js';
 import {useState,useEffect} from 'react';
 import Chart from "react-apexcharts";
 
@@ -127,6 +127,11 @@ export default function UserHeroList() {
     }
     return powerstatName//mayor
   }
+
+    useEffect(()=>
+    {
+
+    },[intelligence])
     return (
       <div >
         
@@ -162,7 +167,7 @@ export default function UserHeroList() {
             !userHeroes?"cargando":
             userHeroes.map((currentHero)=>{
              
-                return <HeroCard 
+                return <HeroCardUserTeam 
                 id={currentHero.id}
                 name={currentHero.name} 
                 image={currentHero.image} 

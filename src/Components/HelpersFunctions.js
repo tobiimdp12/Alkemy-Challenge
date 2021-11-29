@@ -72,6 +72,7 @@ const checkTeam=(heroAlignment)=>
     if(teamArray.filter(hero=> hero.biography.alignment==="good").length<3)
     {
       canAdd=true
+      alert("added successfully");
     }else
     {
       alert("error you have 3 heroes goods")
@@ -87,6 +88,7 @@ const checkTeam=(heroAlignment)=>
     if(teamArray.filter(hero=> hero.biography.alignment==="bad").length<3)
     {
       canAdd=true
+      alert("added successfully");
     }else
     {
       alert("error you have 3 heroes bads")
@@ -180,12 +182,15 @@ export const combatS=()=>
 
 //delete a hero
 
-const deleteHero=()=>
+export const deleteHero=(id)=>
 {
-  //eliminarlo del localStorage
+  let arrayHero=JSON.parse(localStorage.getItem("userHeroes"));
 
-  //eliminarlo del arreglo
+  if(arrayHero!=null)
+  {
+    arrayHero.map(function(hero,index){if(hero.id===id){arrayHero.splice(index, 1); }});
+    localStorage.setItem("userHeroes",JSON.stringify(arrayHero));//set it in the localStorage
 
-  //llamar funcion prom
+  }
 
 }
