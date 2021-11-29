@@ -1,8 +1,8 @@
 import {Link } from 'react-router-dom';
 import HelpersFunction from './HelpersFunctions.js';
-import {AddToTheTeam} from './HelpersFunctions.js';
+import {deleteHero} from './HelpersFunctions.js';
 
-export default function HeroCard(props)
+export default function HeroCardUserTeam(props)
 {
 
     return(
@@ -29,7 +29,7 @@ export default function HeroCard(props)
           
             <div className="d-flex flex-row justify-content-evenly align-items-center flex-wrap bottom-HeroCard">
             
-              <button  className="btn btn-primary " onClick={()=>{AddToTheTeam(props.id);}}>Add to your team!</button>
+              <button  className="btn btn-primary " onClick={()=>{deleteHero(props.id);}}>DELETE</button>
               <Link to={`/moredetails/${props.id}`} className="btn btn-secondary">
                 See more Details
                 
