@@ -1,6 +1,20 @@
-# Getting Started with Create React App
+# SuperHero App desarrollada con React para Alkemy.org, segun los requisitos de: Challenge React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Crea tu propio equipo de superheroes, eligiendo de los resultados obtenidos de SuperHeroAPI.
+
+• Para el manejo de estados entre componentes, se utilizo React-Redux.
+
+• Proteccion de rutas en caso de que el usuario no este logueado.
+
+• Feedback visual y audiovisual para el usuario.
+
+• Para el manejo de peticiones HTTP se utilizo la libreria Axios.
+
+• Para las validaciones del formulario de Login y Search, se utilizo la libreria Formik y validaciones utilizando expresion regulares(regex).
+
+• El sitio es responsive y utiliza Bootstrap como punto de partida para los estilos.
+
+• Se realizaron diferentes tests con React-Testing-Library.
 
 ## Available Scripts
 
