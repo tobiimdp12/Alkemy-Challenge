@@ -1,123 +1,66 @@
-.App {
-  text-align: left;
-}
-
-html
-{
-   /*para que el fondo se adapte al tamaño de la
+html {
+  /*para que el fondo se adapte al tamaño de la
     pantalla*/
-    height:auto;
-    min-height:100%;
-   
+  height: auto;
+  min-height: 100%;
 }
 
-
-body { 
+body {
   height: 100%;
   width: 100%;
-  left:0;
+  left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   position: absolute;
-background-color:black;
-text-transform: uppercase;
+  background-color: var(--color-bg) !important;
+  text-transform: uppercase;
+  overflow-x:hidden !important;
+  font-family: var( --font-family);
+}
+
+.header {
+  margin-top: 8rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 5vw;
+  background: var(--gradient-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 
 
-.header
-{
-  margin-top:20px;
-  margin-bottom: 20px;
-  text-align:center;
- 
-}
-
- .css-3d-text {
-  font-size:5vw;
-  color: #6e6e6e;
-
- }
-
- .css-3d-text-light {
-  font-size:5vw;
-  color: #0095ff;
-  
-}
-
-.heroImage
-{
-  width:100%;
-  height:350px;
-  object-fit: scale-down;
-  background: linear-gradient(124deg, rgb(65, 65, 65),rgb(0, 0, 0));
-  background-size: 1800% 1800%;
-
--webkit-animation: rainbow 5s ease-in-out infinite;
--moz-animation: rainbow 5s ease-in-out infinite;
--o-animation: rainbow 5s ease-in-out infinite;
-  animation: rainbow 5s ease-in-out infinite;
-}
-
-.graphic
-{
- 
- 
- 
-  margin-top: 20px;
-
-  display:flex;
-  justify-content: center;
-  align-items:center;
-
-}
-
-.bottom-HeroCard
-{
-  margin-top: 20px;
-}
-
-/*******/
-@-webkit-keyframes rainbow {
-  0%{background-position:0% 82%}
-  50%{background-position:100% 19%}
-  100%{background-position:0% 82%}
-}
-@-moz-keyframes rainbow {
-  0%{background-position:0% 82%}
-  50%{background-position:100% 19%}
-  100%{background-position:0% 82%}
-}
-@-o-keyframes rainbow {
-  0%{background-position:0% 82%}
-  50%{background-position:100% 19%}
-  100%{background-position:0% 82%}
-}
-@keyframes rainbow { 
-  0%{background-position:0% 82%}
-  50%{background-position:100% 19%}
-  100%{background-position:0% 82%}
-}
-
-
-
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 8px;
   height: 8px;
-  }
-  ::-webkit-scrollbar-thumb{
-  background: linear-gradient(150deg, #00A19C 18%,#05C0E6 77%);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(150deg, #00a19c 18%, #05c0e6 77%);
   border: 2.9px dotted #525252;
   border-radius: 0px;
-  }
-  ::-webkit-scrollbar-thumb:hover{
-  background: #0078A8;
-  }
-  ::-webkit-scrollbar-track{
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0078a8;
+}
+::-webkit-scrollbar-track {
   background: #000000;
-  border: 3.1px dotted #FFFFFF;
+  border: 3.1px dotted #ffffff;
   border-radius: 0px;
-  box-shadow: inset 0px 0px 0px 0px #F0F0F0;
+  box-shadow: inset 0px 0px 0px 0px #f0f0f0;
+}
+@media screen and (max-width: 350px) {
+
+  .header {
+
+    font-size: 2rem;
+ 
   }
 
+  body {
+ 
+  overflow-x:scroll !important;
+  
+}
+}

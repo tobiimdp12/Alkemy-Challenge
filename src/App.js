@@ -1,50 +1,38 @@
+import "./App.css";
 
+import Login from "./Components/Login/Login.jsx";
+import HeroList from "./Components/HeroesList/HeroesList.jsx";
+import UserHeroList from "./Components/UserHeroList/UserHeroesList.jsx";
+import MoreDetails from "./Components/MoreDetails/MoreDetails.jsx";
+import NotFound from "./Components/NotFound/NotFound.jsx";
+import Footer from "./Components/Footer/Footer.jsx";
+import ProtectedRoutes from "./Components/ProtectedRoutes.jsx";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import './App.css';
-
-import Login from './Components/Login.js';
-import HeroList from './Components/HeroList.js';
-import UserHeroList from './Components/UserHeroList.js';
-import MoreDetails from './Components/MoreDetails.js';
-import NavBar from './Components/NavBar.js';
-
-import {BrowserRouter,Route, Routes} from 'react-router-dom';
-
-/*Link->nos permite cambiar la url*/ 
 function App() {
-  
   return (
-    <div className="App">
-      <header>
-        <h1 className="header css-3d-text">WELCOME TO MY CHALLENGE</h1>
-      </header>
-      <hr/>
+    <div>
+     +
       <BrowserRouter>
-        <NavBar/>
-        { /*si el path es /myteam renderizamos el componente del UserHeroList*/ }
-         { /*Routes quedate con el primer path que hagas match*/ }
+        {/*si el path es /myteam renderizamos el componente del UserHeroList*/}
+        {/*Routes quedate con el primer path que hagas match*/}
         <Routes>
-  
-          
+          <Route element={<ProtectedRoutes />}>
+            <Route path="/" element={<UserHeroList />} />
+          </Route>
+          <Route element={<ProtectedRoutes />}>
+            <Route path="/searchheroes" element={<HeroList />} />
+          </Route>
+          <Route path="/moredetails/:id" element={<MoreDetails />} />
+          <Route path="/login" element={<Login />} />
 
-          <Route path="/moredetails/:id" element={<MoreDetails/>} />
-    
-          <Route path="/searchheroes" element={<HeroList/>} />
-          
-          <Route path="/login" element={<Login/>} />
-          
-          <Route path="/" element={<UserHeroList/>} />
-          
-
- 
-        </Routes >
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </BrowserRouter>
-
-      <div >
-      </div>
-    </div> 
+      <div></div>
+      <Footer />
+    </div>
   );
 }
-
 
 export default App;

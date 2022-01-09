@@ -1,22 +1,15 @@
-import Form from './Form.js';
-
-
+import Form from "../Form/Form.jsx";
 
 export default function Login() {
-
-
-    return (
-      
-      <div className="App">
-
+  return (
+    <div className="App">
       <header>
         <h1 className="header css-3d-text-light  ">LOGIN</h1>
       </header>
-      <hr/>
+      <hr />
       <div className="d-flex justify-content-center">
-      <Form></Form>
-
+        <Form></Form>
       </div>
-      </div>
-    );
-  }
+    </div>
+  );
+}
