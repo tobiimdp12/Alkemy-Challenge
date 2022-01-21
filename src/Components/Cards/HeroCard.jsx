@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
-import { addToTheTeam } from "../../Helpers/addToTheTeam.js";
+import { addToTheTeam, checkTeam } from "../../Helpers/addToTheTeam.js";
 import { GetById } from "../../SDK/httpR.js";
 import { useState, useEffect } from "react";
 import "./cards.css";
 import HeroCardMoreDetails from "./HeroCardMoreDetails.jsx";
 import HeroCardUserTeam from "./HeroCardUserTeam.jsx";
+import { useDispatch } from "react-redux";
+import { add } from "../../redux/teamReducer.js";
 //id= id del heroe   type:tipo de carta
 export default function HeroCard({ id, type }) {
   const [heroSelected, setHeroSelected] = useState();
+  const dispatch = useDispatch();
   useEffect(() => {
     GetById(id)
       .then((response) => setHeroSelected(response.data))
@@ -73,7 +76,15 @@ export default function HeroCard({ id, type }) {
             <button
               className="btn btn-primary button"
               onClick={() => {
-                addToTheTeam(heroSelected.id); //funcion para aniadir al equipo
+                if (
+                  checkTeam(
+                    heroSelected.id,
+                    heroSelected.biography.alignment
+                  ) === true
+                ) {
+                  addToTheTeam(heroSelected.id); //funcion para aniadir al equipo
+                  dispatch(add(heroSelected));
+                }
               }}
             >
               Add to your team!
@@ -87,6 +98,7 @@ export default function HeroCard({ id, type }) {
           </div>
         )}
         {type === "moreDetails" && (
+          
           <HeroCardMoreDetails
             biography={heroSelected.biography}
             appearance={heroSelected.appearance}

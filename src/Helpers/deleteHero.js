@@ -9,8 +9,8 @@ export function deleteHero  (id){
           return arrayHero.splice(index, 1);
         }
       });
-      toast.success("hero deleted successfully", {
-        position: toast.POSITION.TOP_RIGHT,
+      toast.warn("hero deleted successfully", {
+        position: toast.POSITION.TOP_CENTER,
       });
       localStorage.setItem("userHeroes", JSON.stringify(arrayHero)); //set it in the localStorage
     }

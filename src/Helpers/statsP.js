@@ -1,5 +1,4 @@
-export const intelligenceS = () => {
-    let arrayHero = JSON.parse(localStorage.getItem("userHeroes"));
+export const intelligenceS = (arrayHero) => {
   
     let total = 0;
     if (arrayHero != null) {
@@ -11,8 +10,7 @@ export const intelligenceS = () => {
     }
     return total;
   };
-  export const strengthS = () => {
-    let arrayHero = JSON.parse(localStorage.getItem("userHeroes"));
+  export const strengthS = (arrayHero) => {
   
     let total = 0;
     if (arrayHero != null) {
@@ -25,8 +23,7 @@ export const intelligenceS = () => {
     return total;
   };
   
-  export const speedS = () => {
-    let arrayHero = JSON.parse(localStorage.getItem("userHeroes"));
+  export const speedS = (arrayHero) => {
   
     let total = 0;
     if (arrayHero != null) {
@@ -39,8 +36,7 @@ export const intelligenceS = () => {
     return total;
   };
   
-  export const durabilityS = () => {
-    let arrayHero = JSON.parse(localStorage.getItem("userHeroes"));
+  export const durabilityS = (arrayHero) => {
   
     let total = 0;
     if (arrayHero != null) {
@@ -52,8 +48,7 @@ export const intelligenceS = () => {
     }
     return total;
   };
-  export const powerS = () => {
-    let arrayHero = JSON.parse(localStorage.getItem("userHeroes"));
+  export const powerS = (arrayHero) => {
   
     let total = 0;
     if (arrayHero != null) {
@@ -65,8 +60,7 @@ export const intelligenceS = () => {
     }
     return total;
   };
-  export const combatS = () => {
-    let arrayHero = JSON.parse(localStorage.getItem("userHeroes"));
+  export const combatS = (arrayHero) => {
   
     let total = 0;
     if (arrayHero != null) {
@@ -79,8 +73,7 @@ export const intelligenceS = () => {
     return total;
   };
   
-  export const heightS = () => {
-    let arrayHero = JSON.parse(localStorage.getItem("userHeroes"));
+  export const heightS = (arrayHero) => {
   
     let total = 0;
     if (arrayHero != null) {
@@ -93,8 +86,7 @@ export const intelligenceS = () => {
     return total;
   };
   
-  export const weightS = () => {
-    let arrayHero = JSON.parse(localStorage.getItem("userHeroes"));
+  export const weightS = (arrayHero) => {
   
     let total = 0;
     if (arrayHero != null) {

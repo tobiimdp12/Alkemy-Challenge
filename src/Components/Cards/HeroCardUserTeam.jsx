@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { deleteHero } from "../../Helpers/deleteHero.js";
-import {refreshTeam}from "../../store/team/action";
+import { deleteMember } from "../../redux/teamReducer.js";
 import "./cards.css";
 // redux
-import { reducer } from '../../redux/store/team';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from "react-redux";
 export default function HeroCardUserTeam(props) {
+  
   const dispatch = useDispatch();
 
   return (
@@ -18,7 +18,7 @@ export default function HeroCardUserTeam(props) {
           className="btn btn-primary button"
           onClick={() => {
             deleteHero(props.id);
-            dispatch(setTeamList(JSON.parse(localStorage.getItem("userHeroes"))));
+            dispatch(deleteMember(props.id));
           }}
         >
           DELETE
